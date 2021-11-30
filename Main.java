@@ -10,7 +10,7 @@ class Main {
 
     public static void main(String[] args) throws IOException {
 
-        System.out.println("Start parsing, nahuj");
+        System.out.println("Start parsing\n\n");
 
         var cssSelector = "div.topicbox > div:nth-child(1)";
         var doc = Jsoup.connect("https://www.anekdot.ru").get();
@@ -26,7 +26,7 @@ class Main {
         for (var e : elements) {
             var txt = e.text().replaceAll("\\\\n", "\n") + "\n";
             fw.write(txt);
-            System.out.println(txt + "\t\t***\n");
+            System.out.println(txt + "\n\t\t***\n");
         }
         fw.close();
     }
